@@ -1,0 +1,135 @@
+@import '@fontsource/cormorant-garamond/latin-400.css';
+@import '@fontsource/cormorant-garamond/latin-400-italic.css';
+@import '@fontsource/cormorant-garamond/latin-500.css';
+@import '@fontsource/cormorant-garamond/latin-600.css';
+@import '@fontsource/pinyon-script/latin-400.css';
+@import '@fontsource/amiri/arabic-400.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sapphire: #10377d;
+  --midnight: #09265c;
+  --ivory: #f5f5f2;
+  --silver: #b7c9e0;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  background: var(--midnight);
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  overflow-x: hidden;
+  color: var(--ivory);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root { overflow-x: clip; }
+
+::selection { background: rgba(183, 201, 224, 0.35); }
+
+:focus-visible {
+  outline: 2px solid var(--silver);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@layer components {
+  /* Acrylic card built from the supplied glass-panel artwork.
+     border-image keeps the glowing rounded edges crisp at any card height. */
+  .glass-card {
+    position: relative;
+    border: 34px solid transparent;
+    border-image-source: url('/images/glass-panel.webp');
+    border-image-slice: 110 fill;
+    border-image-width: 34px;
+    border-image-repeat: stretch;
+    isolation: isolate;
+    filter: drop-shadow(0 26px 28px rgba(2, 10, 40, 0.5));
+  }
+  .glass-sheen {
+    position: absolute;
+    inset: -30px;
+    border-radius: 34px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .glass-sheen::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    bottom: -20%;
+    width: 38%;
+    left: -60%;
+    background: linear-gradient(100deg, transparent 0%, rgba(214, 228, 255, 0.07) 45%, rgba(255, 255, 255, 0.13) 50%, rgba(214, 228, 255, 0.07) 55%, transparent 100%);
+    transform: skewX(-14deg);
+    animation: sheen 11s ease-in-out infinite;
+  }
+  @keyframes sheen {
+    0%, 55% { left: -60%; opacity: 0; }
+    62% { opacity: 1; }
+    92% { left: 130%; opacity: 1; }
+    100% { left: 130%; opacity: 0; }
+  }
+
+  .eyebrow {
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--silver);
+    font-size: 0.8rem;
+  }
+
+  .pill-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 48px;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid rgba(183, 201, 224, 0.55);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+    color: var(--ivory);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .pill-btn:hover { background: rgba(255, 255, 255, 0.2); border-color: rgba(245, 245, 242, 0.8); }
+  .pill-btn--solid {
+    background: var(--ivory);
+    color: var(--midnight);
+    border-color: var(--ivory);
+  }
+  .pill-btn--solid:hover { background: #fff; }
+  .pill-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+}
+
+/* Floral idle sway is handled by framer-motion; make sure nothing animates for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .glass-sheen::after { animation: none; opacity: 0; }
+}
