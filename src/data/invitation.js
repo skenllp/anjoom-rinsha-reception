@@ -11,7 +11,7 @@ export const invitation = {
     },
     bride: {
       name: 'Rinsha Pulikkal',
-      parents: 'Abdurazakh & Failuzath',
+      parents: 'Abdurazakh & Failusath',
       grandparents: ['Late Kunchimmu Haji & Late Pathummakutty Pilakkal'],
     },
   },
