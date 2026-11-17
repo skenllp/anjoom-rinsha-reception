@@ -7,12 +7,12 @@ export const invitation = {
     groom: {
       name: 'Anjoom Irshad',
       parents: 'Irshad PT & Febitha Irshad',
-      grandparents: 'Aboobacker Haji & Late Sainaba',
+      grandparents: ['Aboobacker Haji & Late Sainaba', 'Beeran Kari & Mariyam'],
     },
     bride: {
       name: 'Rinsha Pulikkal',
       parents: 'Abdurazakh & Failuzath',
-      grandparents: 'Late Kunchimmu Haji & Late Pathummakutty Pilakkal',
+      grandparents: ['Late Kunchimmu Haji & Late Pathummakutty Pilakkal'],
     },
   },
 
@@ -23,11 +23,8 @@ export const invitation = {
     date: { year: 2026, month: 12, day: 28 },
     displayDate: '28 DECEMBER 2026',
 
-    // ⏰ RECEPTION TIME — not provided yet, so it is NOT invented.
-    // When confirmed, replace `null` with e.g. { hour: 19, minute: 0 } (24-hour clock, IST).
-    // That will (a) make the countdown target that exact moment and
-    //           (b) reveal the "Add to Calendar" button.
-    time: null,
+    // ⏰ Reception time (24-hour clock, India Standard Time).
+    time: { hour: 17, minute: 30 }, // 5:30 PM
     durationMinutes: 180,
     timezone: 'Asia/Kolkata', // IST, fixed UTC+05:30 (India has no daylight saving)
     utcOffset: '+05:30',
@@ -63,6 +60,7 @@ export const invitation = {
     tourVideo: '/video/venue-tour.mp4',
     tourPoster: '/images/venue-poster.webp',
     venuePhoto: '/images/venue.webp',
+    music: '/audio.mp3',
   },
 
   // Wishes persistence — see README for the 2-minute Supabase setup.

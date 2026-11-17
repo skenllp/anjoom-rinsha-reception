@@ -12,7 +12,9 @@ function Card({ role, relation, person, delay }) {
         <p className="text-[0.95rem] italic text-silver">{rel.child}</p>
         <p className="mt-1 text-[1.2rem] font-medium leading-snug text-ivory">{person.parents}</p>
         <p className="mt-5 text-[0.95rem] italic text-silver">{rel.grand}</p>
-        <p className="mt-1 text-[1.2rem] font-medium leading-snug text-ivory">{person.grandparents}</p>
+        {person.grandparents.map((g) => (
+          <p key={g} className="mt-1 text-[1.2rem] font-medium leading-snug text-ivory">{g}</p>
+        ))}
       </GlassCard>
     </Reveal>
   );

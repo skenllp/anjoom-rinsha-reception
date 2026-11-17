@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Volume2, VolumeX, SkipForward } from 'lucide-react';
 import { invitation } from '../data/invitation';
+import { music } from '../lib/music';
 
 /**
  * Fullscreen 9:16 cinematic opening.
@@ -21,6 +22,7 @@ export default function Intro({ onFinish }) {
     if (finished.current) return;
     finished.current = true;
     videoRef.current?.pause();
+    music.start(); // begins from the guest's skip tap, or right after the video ends
     onFinish();
   };
 
@@ -28,6 +30,7 @@ export default function Intro({ onFinish }) {
     const v = videoRef.current;
     if (!v || phase !== 'idle') return;
     setPhase('loading');
+    music.prime(); // unlock audio inside this tap so music can start when the video ends
     v.muted = false;
     try {
       await v.play();

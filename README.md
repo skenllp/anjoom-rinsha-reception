@@ -71,3 +71,6 @@ src/components  Intro · Hero · Families · SaveTheDate · Venue · VenueVideo 
 - The venue video element does not exist in the DOM until the modal opens, so it is never downloaded on first load.
 - `prefers-reduced-motion` is honoured (Framer Motion `MotionConfig` + CSS).
 - Fonts are self-hosted via `@fontsource` (Cormorant Garamond, Pinyon Script, Amiri) — no third-party requests.
+
+## Background music
+`public/audio.mp3` (re-encoded to 96 kbps, ~2 MB). It starts only from the guest's tap (Skip Intro, or when the opening video ends), fades in, loops, pauses while the venue video plays, and can be toggled with the round button at the bottom-right. Replace the file (or change `media.music` in `src/data/invitation.js`) to swap the song.

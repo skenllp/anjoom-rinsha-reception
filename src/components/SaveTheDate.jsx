@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { CalendarPlus } from 'lucide-react';
 import { invitation } from '../data/invitation';
-import { diffParts, downloadIcs, getTargetMs, googleCalendarUrl, hasEventTime } from '../lib/event';
+import { diffParts, formatEventTime, downloadIcs, getTargetMs, googleCalendarUrl, hasEventTime } from '../lib/event';
 import { Reveal, SectionHeading } from './ui';
 
 function useCountdown(targetMs) {
@@ -32,6 +32,10 @@ export default function SaveTheDate() {
   return (
     <section id="save-the-date" className="relative px-4 py-20 sm:py-28">
       <SectionHeading eyebrow="Save the Date" title={invitation.event.displayDate} />
+
+      {timeSet && (
+        <p className="mt-4 text-center font-display text-xl tracking-[0.2em] text-ivory">RECEPTION AT {formatEventTime()}</p>
+      )}
 
       <div className="mx-auto mt-12 max-w-xl">
         <Reveal>

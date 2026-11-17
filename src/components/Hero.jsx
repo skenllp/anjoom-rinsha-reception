@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { CalendarDays, MapPin } from 'lucide-react';
+import { CalendarDays, Clock, MapPin } from 'lucide-react';
 import { invitation } from '../data/invitation';
+import { formatEventTime } from '../lib/event';
 import { EASE, FloralCorners, GlassCard } from './ui';
 
 const container = {
@@ -58,6 +59,12 @@ export default function Hero({ ready }) {
               <CalendarDays size={17} strokeWidth={1.6} className="shrink-0 text-silver" aria-hidden="true" />
               <time dateTime={`${event.date.year}-${event.date.month}-${event.date.day}`}>{event.displayDate}</time>
             </p>
+            {event.time && (
+              <p className="flex items-center gap-2 whitespace-nowrap">
+                <Clock size={17} strokeWidth={1.6} className="shrink-0 text-silver" aria-hidden="true" />
+                <span>{formatEventTime()}</span>
+              </p>
+            )}
             <p className="flex items-center gap-2 whitespace-nowrap">
               <MapPin size={17} strokeWidth={1.6} className="shrink-0 text-silver" aria-hidden="true" />
               <span>

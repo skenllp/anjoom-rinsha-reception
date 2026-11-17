@@ -8,6 +8,8 @@ import Venue from './components/Venue';
 import { VenueVideoSection, VenueTourModal } from './components/VenueVideo';
 import Wishes from './components/Wishes';
 import Closing from './components/Closing';
+import MusicToggle from './components/MusicToggle';
+import { music } from './lib/music';
 
 const skipIntro = () => {
   try {
@@ -36,8 +38,14 @@ export default function App() {
   }, [introOpen]);
 
   const finishIntro = useCallback(() => setIntroOpen(false), []);
-  const openTour = useCallback(() => setTourOpen(true), []);
-  const closeTour = useCallback(() => setTourOpen(false), []);
+  const openTour = useCallback(() => {
+    music.suspend(); // the venue video has its own sound
+    setTourOpen(true);
+  }, []);
+  const closeTour = useCallback(() => {
+    setTourOpen(false);
+    music.resume();
+  }, []);
 
   return (
     <MotionConfig reducedMotion="user">
@@ -58,6 +66,7 @@ export default function App() {
         <Closing />
       </main>
 
+      {!introOpen && <MusicToggle />}
       <VenueTourModal open={tourOpen} onClose={closeTour} />
 
       <AnimatePresence>{introOpen && <Intro key="intro" onFinish={finishIntro} />}</AnimatePresence>

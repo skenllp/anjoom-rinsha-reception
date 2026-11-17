@@ -2,6 +2,13 @@ import { invitation } from '../data/invitation';
 
 const pad = (n) => String(n).padStart(2, '0');
 
+export function formatEventTime() {
+  const t = invitation.event.time;
+  if (!t) return '';
+  const h12 = t.hour % 12 || 12;
+  return `${h12}:${pad(t.minute)} ${t.hour >= 12 ? 'PM' : 'AM'}`;
+}
+
 export const hasEventTime = () => Boolean(invitation.event.time);
 
 /** Epoch ms of the countdown target in IST. Without a configured time → start of the day (00:00 IST). */
