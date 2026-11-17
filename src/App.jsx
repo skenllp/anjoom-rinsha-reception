@@ -6,7 +6,7 @@ import Families from './components/Families';
 import SaveTheDate from './components/SaveTheDate';
 import Venue from './components/Venue';
 import { VenueVideoSection, VenueTourModal } from './components/VenueVideo';
-import Wishes from './components/Wishes';
+// import Wishes from './components/Wishes'; // re-enable once Supabase or a WhatsApp number is set up
 import Closing from './components/Closing';
 import MusicToggle from './components/MusicToggle';
 import { music } from './lib/music';
@@ -62,7 +62,7 @@ export default function App() {
         <SaveTheDate />
         <Venue onOpenTour={openTour} />
         <VenueVideoSection onOpenTour={openTour} />
-        <Wishes />
+        {/* <Wishes /> */}
         <Closing />
       </main>
 
