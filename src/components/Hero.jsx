@@ -18,7 +18,7 @@ function Rule() {
 }
 
 export default function Hero({ ready }) {
-  const { couple, event, venue, texts, hosts } = invitation;
+  const { couple, event, venue, texts, hosts, bestWishes } = invitation;
   return (
     <section id="invitation" className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-2.5 py-14 sm:px-6">
       <GlassCard className="w-full max-w-[480px] sm:max-w-[540px]" innerClassName="px-2 py-5 sm:px-5 sm:py-8">
@@ -84,6 +84,7 @@ export default function Hero({ ready }) {
           <motion.div variants={item} className="mt-4">
             <p className="font-display text-base italic text-ivory/90 sm:text-lg">{texts.complimentsLabel}</p>
             <p className="mt-0.5 font-display text-[1.1rem] font-medium tracking-[0.2em] text-ivory sm:text-xl">{hosts}</p>
+            {bestWishes && <p className="mt-2 font-display text-[1rem] text-ivory/90">With Best Wishes: {bestWishes}</p>}
           </motion.div>
         </motion.div>
       </GlassCard>

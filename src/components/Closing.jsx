@@ -5,7 +5,7 @@ import { shareInvitation } from '../lib/event';
 import { Divider, FloralCorners, Reveal } from './ui';
 
 export default function Closing() {
-  const { couple, texts, hosts } = invitation;
+  const { couple, texts, hosts, bestWishes } = invitation;
   const [note, setNote] = useState('');
 
   const onShare = async () => {
@@ -32,6 +32,7 @@ export default function Closing() {
         <Reveal delay={0.2} className="mt-9">
           <p className="font-display text-base italic text-silver sm:text-lg">{texts.complimentsLabel}</p>
           <p className="mt-1 font-display text-[1.3rem] font-medium tracking-[0.22em] text-ivory sm:text-2xl">{hosts}</p>
+          {bestWishes && <p className="mt-3 font-display text-[1.05rem] text-silver">With Best Wishes: {bestWishes}</p>}
         </Reveal>
         <Reveal delay={0.3} className="mt-10 flex flex-col items-center gap-3">
           <button type="button" onClick={onShare} className="pill-btn">

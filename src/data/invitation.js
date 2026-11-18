@@ -12,7 +12,7 @@ export const invitation = {
     bride: {
       name: 'Rinsha Pulikkal',
       parents: 'Abdurazakh & Failusath',
-      grandparents: ['Late Kunchimmu Haji & Late Pathummakutty Pilakkal'],
+      grandparents: ['Late Kunchimmu Haji & Late Fathimakutty Hajjumma'],
     },
   },
 
@@ -42,6 +42,7 @@ export const invitation = {
   },
 
   hosts: 'PT GROUP & FAMILY',
+  bestWishes: 'Anshif Irshad & Haseem Irshad',
 
   texts: {
     bismillah: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ',
