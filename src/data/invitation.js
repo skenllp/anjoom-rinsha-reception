@@ -42,7 +42,7 @@ export const invitation = {
   },
 
   hosts: 'PT GROUP & FAMILY',
-  bestWishes: 'Anshif Irshad & Haseem Irshad',
+  bestWishes: 'Azim Irshad & Haseem Irshad',
 
   texts: {
     bismillah: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ',
