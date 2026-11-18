@@ -7,7 +7,7 @@ function Card({ role, relation, person, delay }) {
     <Reveal delay={delay} className="h-full">
       <GlassCard className="h-full" innerClassName="flex flex-col items-center px-3 py-7 text-center sm:px-6 sm:py-9">
         <p className="eyebrow">{role}</p>
-        <h3 className="mt-3 w-full max-w-full text-center font-script text-[2.3rem] leading-[1.15] text-ivory sm:text-5xl">{person.name}</h3>
+        <h3 className="mt-3 font-script text-[2.6rem] leading-[1.15] text-ivory sm:text-5xl">{person.name}</h3>
         <Divider className="my-5 scale-90" />
         <p className="text-[0.95rem] italic text-silver">{rel.child}</p>
         <p className="mt-1 text-[1.2rem] font-medium leading-snug text-ivory">{person.parents}</p>

@@ -44,13 +44,13 @@ export default function Hero({ ready }) {
             <span className="h-px flex-1 bg-gradient-to-l from-transparent via-silver/70 to-silver/70" />
           </motion.div>
 
-          <motion.p variants={item} className="mt-1 w-full max-w-full text-center font-script text-[2.4rem] leading-[1.15] text-ivory sm:text-[3.6rem]">
+          <motion.p variants={item} className="mt-1 font-script text-[2.7rem] leading-[1.15] text-ivory sm:text-[3.6rem]">
             {couple.groom.name}
           </motion.p>
           <motion.p variants={item} className="font-display text-3xl leading-none text-ivory/90" aria-label="and">
             &amp;
           </motion.p>
-          <motion.p variants={item} className="w-full max-w-full text-center font-script text-[2.4rem] leading-[1.15] text-ivory sm:text-[3.6rem]">
+          <motion.p variants={item} className="font-script text-[2.7rem] leading-[1.15] text-ivory sm:text-[3.6rem]">
             {couple.bride.name}
           </motion.p>
 
@@ -84,7 +84,7 @@ export default function Hero({ ready }) {
           <motion.div variants={item} className="mt-4">
             <p className="font-display text-base italic text-ivory/90 sm:text-lg">{texts.complimentsLabel}</p>
             <p className="mt-0.5 font-display text-[1.1rem] font-medium tracking-[0.2em] text-ivory sm:text-xl">{hosts}</p>
-            {bestWishes && <p className="mx-auto mt-2 max-w-[18rem] text-center font-display text-[1rem] leading-snug text-ivory/90">With Best Wishes: {bestWishes}</p>}
+            {bestWishes && <p className="mt-2 font-display text-[1rem] text-ivory/90">With Best Wishes: {bestWishes}</p>}
           </motion.div>
         </motion.div>
       </GlassCard>
