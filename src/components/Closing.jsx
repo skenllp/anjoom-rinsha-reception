@@ -19,7 +19,7 @@ export default function Closing() {
       <div className="absolute inset-0 -z-0 bg-gradient-to-b from-transparent via-midnight/40 to-midnight/70" aria-hidden="true" />
       <div className="relative z-10 mx-auto max-w-md">
         <Reveal>
-          <p className="font-script text-[2.35rem] leading-[1.25] text-ivory sm:text-6xl">
+          <p className="mx-auto w-full max-w-full text-center font-script text-[2.1rem] leading-[1.25] text-ivory sm:text-6xl">
             {couple.groom.name}
             <span className="my-1 block font-display text-3xl text-ivory/85">&amp;</span>
             {couple.bride.name}
@@ -32,7 +32,7 @@ export default function Closing() {
         <Reveal delay={0.2} className="mt-9">
           <p className="font-display text-base italic text-silver sm:text-lg">{texts.complimentsLabel}</p>
           <p className="mt-1 font-display text-[1.3rem] font-medium tracking-[0.22em] text-ivory sm:text-2xl">{hosts}</p>
-          {bestWishes && <p className="mt-3 font-display text-[1.05rem] text-silver">With Best Wishes: {bestWishes}</p>}
+          {bestWishes && <p className="mx-auto mt-3 max-w-[18rem] text-center font-display text-[1.05rem] leading-snug text-silver">With Best Wishes: {bestWishes}</p>}
         </Reveal>
         <Reveal delay={0.3} className="mt-10 flex flex-col items-center gap-3">
           <button type="button" onClick={onShare} className="pill-btn">
