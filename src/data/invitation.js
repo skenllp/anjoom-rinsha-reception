@@ -7,11 +7,11 @@ export const invitation = {
     groom: {
       name: 'Anjoom Irshad',
       parents: 'Irshad PT & Febitha Irshad',
-      grandparents: ['Aboobacker Haji & Late Sainaba', 'Beeran Kari & Mariyam'],
+      grandparents: ['Aboobacker Haji & Late Sainaba', 'Late Beeran Kari & Mariyam'],
     },
     bride: {
       name: 'Rinsha Pulikkal',
-      parents: 'Abdurazakh & Failusath',
+      parents: 'Abdu Razakh Pulikkal & Failusath',
       grandparents: ['Late Kunchimmu Haji &', 'Late Fathimakutty Hajjumma'],
     },
   },
